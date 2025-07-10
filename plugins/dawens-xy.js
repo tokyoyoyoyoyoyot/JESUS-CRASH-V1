@@ -90,7 +90,7 @@ cmd({
         } catch (e) {
           console.error(`❌ Error in ${file}:`, e.message);
         }
-        await new Promise(res => setTimeout(res, 10)); // small delay
+        await new Promise(res => setTimeout(res, 0)); // small delay
       }
     }
 
