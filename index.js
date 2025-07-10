@@ -81,9 +81,6 @@ const app = express();
 const port = process.env.PORT || 9090;
   
   //=============================================
-  
-  const fs = require('fs');
-let bot;
 
 // ✅ Fonksyon pou mete about la
 async function changeAbout(conn, text) {
