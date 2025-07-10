@@ -6,7 +6,7 @@ cmd({
     pattern: 'toimg',
     alias: ['sticker2img', 'photo', 'stickertoimage', 's2i'],
     desc: 'Convert stickers to images',
-    category: 'main',
+    category: 'convert',
     react: '🖼️',
     filename: __filename
 }, async (client, match, message, { from }) => {
