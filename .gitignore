@@ -1,0 +1,12 @@
+node_modules/
+.env
+.DS_Store
+
+bugs/
+data/
+lib/
+plugins/
+sessions/
+DAWENS-BOY96/
+handler/
+media/
