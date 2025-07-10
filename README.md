@@ -140,19 +140,18 @@ You will need a session ID to run the JESUS-CRASH-V1. Click the button below to 
 
 ---
 
-<h4 align="center">1. Heroku</h4>
-<p style="text-align: center; font-size: 1.2em;">
+| Platform | Deploy |
+|---------|--------|
+| 🟣 Heroku | [![Deploy to Heroku](https://img.shields.io/badge/DEPLOY-HEROKU-purple?style=for-the-badge&logo=heroku)](https://dashboard.heroku.com/new?template=https://github.com/dawens8/sessions) |
+| 🔵 Render | [![Deploy to Render](https://img.shields.io/badge/DEPLOY-RENDER-blue?style=for-the-badge&logo=render)](https://dashboard.render.com/) |
+| ⚫ Koyeb | [![Deploy to Koyeb](https://img.shields.io/badge/DEPLOY-KOYEB-black?style=for-the-badge&logo=koyeb)](https://app.koyeb.com/) |
+| 🟡 Railway  | [![Deploy to Railway](https://img.shields.io/badge/DEPLOY-RAILWAY-3f3f3f?style=for-the-badge&logo=railway)](https://railway.app/new/template?repository=https://github.com/dawens8/JESUS-CRASH-V1) |
+| 🟠 Netlify  | [![Deploy to Netlify](https://img.shields.io/badge/DEPLOY-NETLIFY-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://app.netlify.com/start/deploy?repository=https://github.com/dawens8/JESUS-CRASH-V1) |
+| 🟣 Replit   | [![Run on Replit](https://img.shields.io/badge/RUN-ON%20REPLIT-100000?style=for-the-badge&logo=replit&logoColor=white)](https://replit.com/github/dawens8/JESUS-CRASH-V1) |
+| 🟢 Vercel   | [![Deploy to Vercel](https://img.shields.io/badge/DEPLOY-VERCEL-black?style=for-the-badge&logo=vercel)](https://vercel.com/import/project?template=https://github.com/dawens8/JESUS-CRASH-V1) |
 
 
-***[![Deploy on heroku](https://www.herokucdn.com/deploy/button.svg)](https://jesus-DAWENS-BOY96.vercel.app)***
-
-----------
-
-<h4 align="center">2. TalkDrove Free</h4>
-<p style="text-align: center; font-size: 1.2em;">
-  
-<p align="center">
-<a href='https://talkdrove.com/dawens8/JESUS-CRASH-V1' target="_blank"><img alt='Heroku' src='https://img.shields.io/badge/-TalkDrove ‎Deploy-6971FF?style=for-the-badge&logo=Github&logoColor=white'/< width=150 height=28/p></a>
+---
   
 <details>
   
