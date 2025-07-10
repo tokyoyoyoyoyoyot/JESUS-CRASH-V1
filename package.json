@@ -50,6 +50,7 @@
     "@mrnima/tiktok-downloader": "1.0.0",
     "@mrnima/facebook-downloader": "1.0.0",
     "mrnima-moviedl": "1.0.0",
-    "ytdl-core": "^4.11.1"
+    "ytdl-core": "^4.11.1",
+    "lottie-to-webp": "^1.0.3"
   }
 }
