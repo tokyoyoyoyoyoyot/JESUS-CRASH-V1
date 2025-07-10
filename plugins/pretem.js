@@ -3,7 +3,7 @@ const { Sticker, StickerTypes } = require('wa-sticker-formatter');
 
 cmd({
   pattern: 'pretem',
-  desc: 'Re-send any sticker, image, or short video as yours (max 20s video)',
+  desc: 'Re-send any sticker, image, or short video as yours (max 80s video)',
   category: 'spam',
   react: '🎭',
   filename: __filename
@@ -12,12 +12,12 @@ cmd({
     const quoted = mek.quoted;
 
     if (!quoted || !['stickerMessage', 'videoMessage', 'imageMessage'].includes(quoted.mtype)) {
-      return reply('❌ Reply to a *sticker*, *image*, or *short video* (max 20s).');
+      return reply('❌ Reply to a *sticker*, *image*, or *short video* (max 80s).');
     }
 
     // For video, check duration
-    if (quoted.mtype === 'videoMessage' && quoted.message.videoMessage.seconds > 20) {
-      return reply('❌ Video is longer than 20 seconds. Please use a shorter one.');
+    if (quoted.mtype === 'videoMessage' && quoted.message.videoMessage.seconds > 80) {
+      return reply('❌ Video is longer than 80 seconds. Please use a shorter one.');
     }
 
     const media = await bot.downloadMediaMessage(quoted);
