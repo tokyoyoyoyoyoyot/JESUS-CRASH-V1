@@ -1,3 +1,4 @@
+const { cmd } = require('../command'); // 👈 OBLIGATWA
 const userPresence = new Map();
 
 bot.ev.on('presence.update', update => {
@@ -23,14 +24,13 @@ cmd({
     let deviceType = 'Unknown';
 
     if (presences) {
-      // Presences se yon object: aparèy => done prezans
-      // Nou ka pran premye aparèy ki pa offline oswa jis premye kle a
-      const activeDevices = Object.entries(presences).filter(([device, info]) => info.lastKnownPresence !== 'offline');
+      const activeDevices = Object.entries(presences).filter(
+        ([device, info]) => info.lastKnownPresence !== 'offline'
+      );
 
       if (activeDevices.length > 0) {
-        deviceType = activeDevices[0][0]; // Premye aparèy (ex: 'android', 'web', etc)
+        deviceType = activeDevices[0][0];
       } else {
-        // Si tout offline, pran premye aparèy nan lis
         deviceType = Object.keys(presences)[0];
       }
     }
