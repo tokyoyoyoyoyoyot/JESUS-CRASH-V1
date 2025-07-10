@@ -151,7 +151,7 @@ cmd({
       'https://files.catbox.moe/fo2kz0.mp4',
       'https://files.catbox.moe/31os2j.mp4',
       'https://files.catbox.moe/2auhjw.mp4',
-      'https://files.catbox.moe/czk8mu.mp4'
+      'https://files.catbox.moe/7wh9h7.mp4'
     ];
 
     const randomAudio = audioOptions[Math.floor(Math.random() * audioOptions.length)];
