@@ -108,39 +108,39 @@ async function connectToWA() {
 
   bot = conn;
 
-  conn.ev.on('connection.update', (update) => {
-    const { connection, lastDisconnect } = update;
-    if (connection === 'close') {
-      if (lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut) {
-        connectToWA();
+  conn.ev.on('connection.update', async (update) => {
+  const { connection, lastDisconnect } = update;
+  if (connection === 'close') {
+    if (lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut) {
+      connectToWA();
+    }
+  } else if (connection === 'open') {
+    console.log('🧬 Installing Plugins');
+    const path = require('path');
+    fs.readdirSync("./plugins/").forEach((plugin) => {
+      if (path.extname(plugin).toLowerCase() === ".js") {
+        require("./plugins/" + plugin);
       }
-    } else if (connection === 'open') {
-      console.log('🧬 Installing Plugins');
-      const path = require('path');
-      fs.readdirSync("./plugins/").forEach((plugin) => {
-        if (path.extname(plugin).toLowerCase() === ".js") {
-          require("./plugins/" + plugin);
-        }
-      });
-      console.log('Plugins installed successful ✅');
-      console.log('JESUS-CRASH-V1 CONNECTED SUCCESSFULLY ✅');
+    });
+    console.log('Plugins installed successful ✅');
+    console.log('JESUS-CRASH-V1 CONNECTED SUCCESSFULLY ✅');
 
-// ✅ Mete about
-      try {
-        await changeAbout(conn, `𝐆𝐎𝐃 𝐃𝐀𝐖𝐄𝐍𝐒 – Présence silencieuse.`);
-        console.log("✅ About changed successfully!");
-      } catch (err) {
-        console.error("❌ Error changing About:", err);
+    // ✅ Mete about
+    try {
+      await changeAbout(conn, `𝐆𝐎𝐃 𝐃𝐀𝐖𝐄𝐍𝐒 – Présence silencieuse.`);
+      console.log("✅ About changed successfully!");
+    } catch (err) {
+      console.error("❌ Error changing About:", err);
+    }
+
+    // ✅ Prezans (presences)
+    conn.ev.on('presence.update', (update) => {
+      const id = update.id;
+      if (!bot.presence) bot.presence = {};
+      if (update.presences && update.presences[id]) {
+        bot.presence[id] = update.presences[id];
       }
-
-      // ✅ Prezans (presences)
-      conn.ev.on('presence.update', (update) => {
-        const id = update.id;
-        if (!bot.presence) bot.presence = {};
-        if (update.presences && update.presences[id]) {
-          bot.presence[id] = update.presences[id];
-        }
-      });
+    });
 
       let up = `
 ╭──── ❏ *👋 Welcome JESUS-CRASH-V1 User!*
