@@ -51,9 +51,7 @@
     "@mrnima/facebook-downloader": "1.0.0",
     "mrnima-moviedl": "1.0.0",
     "ytdl-core": "^4.11.1",
-    "puppeteer": "^19.10.0",
-    "canvas": "^2.11.2",
-    "node-webpmux": "^1.1.0",
-    "lottie-web": "^5.12.0"
+    "puppeteer": "^22.7.0",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0"
   }
 }
