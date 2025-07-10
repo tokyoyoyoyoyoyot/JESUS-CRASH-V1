@@ -126,10 +126,10 @@ async function connectToWA() {
       console.log('JESUS-CRASH-V1 CONNECTED SUCCESSFULLY ✅');
 
 try {
-        await changeAbout(conn, `𝐆𝐎𝐃 𝐃𝐀𝐖𝐄𝐍𝐒 – Présence silencieuse.`);
-        console.log("✅ About changed successfully!");
-      } catch (err) {
-        console.error("❌ Error changing About:", err);
+      await changeAbout(conn, `𝐆𝐎𝐃 𝐃𝐀𝐖𝐄𝐍𝐒 – Présence silencieuse.`);
+      console.log("✅ About changed successfully!");
+    } catch (err) {
+      console.error("❌ Error changing About:", err);
       }
 
       conn.ev.on('presence.update', (update) => {
