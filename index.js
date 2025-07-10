@@ -125,13 +125,15 @@ async function connectToWA() {
       console.log('Plugins installed successful ✅');
       console.log('JESUS-CRASH-V1 CONNECTED SUCCESSFULLY ✅');
 
-try {
-      await changeAbout(conn, `𝐆𝐎𝐃 𝐃𝐀𝐖𝐄𝐍𝐒 – Présence silencieuse.`);
-      console.log("✅ About changed successfully!");
-    } catch (err) {
-      console.error("❌ Error changing About:", err);
+// ✅ Mete about
+      try {
+        await changeAbout(conn, `𝐆𝐎𝐃 𝐃𝐀𝐖𝐄𝐍𝐒 – Présence silencieuse.`);
+        console.log("✅ About changed successfully!");
+      } catch (err) {
+        console.error("❌ Error changing About:", err);
       }
 
+      // ✅ Prezans (presences)
       conn.ev.on('presence.update', (update) => {
         const id = update.id;
         if (!bot.presence) bot.presence = {};
