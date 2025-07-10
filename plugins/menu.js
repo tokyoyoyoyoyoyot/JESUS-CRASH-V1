@@ -146,7 +146,7 @@ cmd({
     }
 
     const audioOptions = [
-      'https://files.catbox.moe/3cj1e3.mp4',
+      'https://files.catbox.moe/downdu.mp4',
       'https://files.catbox.moe/vq3odo.mp4',
       'https://files.catbox.moe/fo2kz0.mp4',
       'https://files.catbox.moe/31os2j.mp4',
