@@ -1,5 +1,11 @@
-const { cmd } = require('../command');
+const userPresence = new Map();
 
+bot.ev.on('presence.update', update => {
+  const { id, presences } = update;
+  userPresence.set(id, presences);
+});
+
+// Kòmand
 cmd({
   pattern: 'device',
   desc: 'Check what device a user is using',
@@ -9,17 +15,23 @@ cmd({
 }, async (bot, mek, { reply, quoted, isGroup }) => {
   try {
     const target = isGroup
-      ? (quoted ? quoted.sender : mek.mentionedJid[0] || mek.sender)
+      ? (quoted ? quoted.sender : (mek.mentionedJid && mek.mentionedJid.length ? mek.mentionedJid[0] : mek.sender))
       : mek.sender;
 
-    const presence = bot.presence?.[target];
+    const presences = userPresence.get(target);
 
     let deviceType = 'Unknown';
 
-    if (presence && presence.lastKnownPresence) {
-      const platform = presence.lastKnownPresence?.platform || presence.platform;
-      if (platform) {
-        deviceType = platform;
+    if (presences) {
+      // Presences se yon object: aparèy => done prezans
+      // Nou ka pran premye aparèy ki pa offline oswa jis premye kle a
+      const activeDevices = Object.entries(presences).filter(([device, info]) => info.lastKnownPresence !== 'offline');
+
+      if (activeDevices.length > 0) {
+        deviceType = activeDevices[0][0]; // Premye aparèy (ex: 'android', 'web', etc)
+      } else {
+        // Si tout offline, pran premye aparèy nan lis
+        deviceType = Object.keys(presences)[0];
       }
     }
 
