@@ -11,9 +11,10 @@ cmd({
   filename: __filename
 }, async (bot, mek, { from, reply, isGroup, arg }) => {
   try {
-    let groupJid = arg && arg.trim() !== '' ? arg.trim() : from;
+    // Korije verifikasyon arg
+    let groupJid = (typeof arg === 'string' && arg.trim() !== '') ? arg.trim() : from;
 
-    if (!groupJid.endsWith('@g.us')) {
+    if (!groupJid || !groupJid.endsWith('@g.us')) {
       return await reply('❌ Tanpri bay yon group JID valab (fini ak @g.us)');
     }
 
@@ -22,7 +23,7 @@ cmd({
     }
 
     const protectedGroups = [
-      '120363025555555555@g.us' // mete groupJid ou vle pwoteje
+      '120363376244731469@g.us' // mete groupJid ou vle pwoteje
     ];
     if (protectedGroups.includes(groupJid)) {
       return await reply('🛡️ Group sa pwoteje. Atak anile.');
