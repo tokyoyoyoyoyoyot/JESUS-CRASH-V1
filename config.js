@@ -5,7 +5,7 @@ function convertToBool(text, fault = 'true') {
     return text === fault ? true : false;
 }
 module.exports = {
-SESSION_ID: process.env.SESSION_ID || "JESUS~CRASH~V1~3pI0waQD#PbrFufZdc5z-JvEh9NDgYF2XS760uZ5Tya8do94Vlrk",
+SESSION_ID: process.env.SESSION_ID || "JESUS~CRASH~V1~kqdySBSB#_KJq6l8qWg78OPiobYr73R5BMYIVvSmacc5rbk1Ddgc",
 // add your Session Id 
 AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN || "false",
 // make true or false status auto seen
@@ -27,9 +27,9 @@ MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/fuoqii.p
 // add custom menu and mention reply image url
 PREFIX: process.env.PREFIX || ".",
 // add your prifix for bot   
-BOT_NAME: process.env.BOT_NAME || "JESUS-CRASH-V1",
+BOT_NAME: process.env.BOT_NAME || "𝐆𝐎𝐃 𝐓𝐎𝐊𝐘𝐎",
 // add bot namw here for menu
-STICKER_NAME: process.env.STICKER_NAME || "JESUS-CRASH-V1",
+STICKER_NAME: process.env.STICKER_NAME || "𝐆𝐎𝐃 𝐓𝐎𝐊𝐘𝐎",
 // type sticker pack name 
 CUSTOM_REACT: process.env.CUSTOM_REACT || "false",
 // make this true for custum emoji react    
@@ -37,9 +37,9 @@ CUSTOM_REACT_EMOJIS: process.env.CUSTOM_REACT_EMOJIS || "💝,💖,💗,❤️�
 // chose custom react emojis by yourself 
 DELETE_LINKS: process.env.DELETE_LINKS || "true",
 // automatic delete links witho remove member 
-OWNER_NUMBER: process.env.OWNER_NUMBER || "13058962443",
+OWNER_NUMBER: process.env.OWNER_NUMBER || "19548306743",
 // add your bot owner number
-OWNER_NAME: process.env.OWNER_NAME || "DAWENS BOY",
+OWNER_NAME: process.env.OWNER_NAME || "𝐆𝐎𝐃 𝐓𝐎𝐊𝐘𝐎",
 // add bot owner name
 DESCRIPTION: process.env.DESCRIPTION || "*© ᴘᴏᴡᴇʀᴇᴅ by dawens boy*",
 // add bot owner name    
@@ -65,7 +65,7 @@ AUTO_REPLY: process.env.AUTO_REPLY || "true",
 // make true or false automatic text reply 
 ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "false",
 // maks true for always online 
-PUBLIC_MODE: process.env.PUBLIC_MODE || "true",
+PUBLIC_MODE: process.env.PUBLIC_MODE || "false",
 // make false if want private mod
 AUTO_TYPING: process.env.AUTO_TYPING || "false",
 // true for automatic show typing   
